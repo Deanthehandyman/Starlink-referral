@@ -386,6 +386,9 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:50px
 .footer-links a:hover{color:var(--white);}
 .footer-bottom{max-width:1180px;margin:20px auto 0;font-size:11px;color:var(--grey2);text-align:center;line-height:1.8;}
 
+.privacy-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:640px){.privacy-grid{grid-template-columns:1fr 1fr;}}
+
 /* ── CHAT ── */
 #chat-btn{position:fixed;bottom:20px;right:20px;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#00aaff);border:none;cursor:pointer;z-index:9999;box-shadow:0 4px 24px rgba(0,120,255,.6);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:transform .2s,box-shadow .2s;}
 @media(min-width:480px){#chat-btn{width:62px;height:62px;bottom:26px;right:26px;}}
@@ -512,12 +515,12 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:50px
 <!-- STATS BAR -->
 <div class="stats-bar z">
   <div class="stats-inner">
-    <div class="stat-item"><span class="stat-n">400+</span><span class="stat-l">Mbps MAX Plan</span></div>
+    <div class="stat-item"><span class="stat-n">400+</span><span class="stat-l">Mbps Today</span></div>
+    <div class="stat-item"><span class="stat-n">1 Gbps</span><span class="stat-l">Coming 2026</span></div>
     <div class="stat-item"><span class="stat-n">20ms</span><span class="stat-l">Low Latency</span></div>
     <div class="stat-item"><span class="stat-n">∞</span><span class="stat-l">No Data Caps</span></div>
-    <div class="stat-item"><span class="stat-n">$50</span><span class="stat-l">Starting Price</span></div>
     <div class="stat-item"><span class="stat-n">$0</span><span class="stat-l">2nd Month Free</span></div>
-    <div class="stat-item"><span class="stat-n">200mi</span><span class="stat-l">Install Radius</span></div>
+    <div class="stat-item"><span class="stat-n">📱</span><span class="stat-l">Direct to Cell Live</span></div>
   </div>
 </div>
 
@@ -625,6 +628,141 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:50px
 
     <div style="text-align:center;margin-top:32px;">
       <a href="https://starlink.com/residential?referral=RC-2034578-19016-61&app_source=share" class="btn btn-primary btn-lg" target="_blank" rel="noopener">🛰️ Get Resilient Internet — 2nd Month Free</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY & FREEDOM SECTION -->
+<div class="z" style="background:linear-gradient(135deg,#030a10,#020810);border-top:1px solid var(--border);">
+  <div class="section wrap">
+    <div class="text-center">
+      <div class="eyebrow" style="justify-content:center;">Your Internet. Your Data.</div>
+      <h2>The Internet That <span class="c">Doesn't Own You</span></h2>
+      <p class="section-lead mx-auto">Most ISPs treat your internet connection as a second revenue stream — selling your browsing habits, injecting ads, and building profiles on everything you do online. Starlink doesn't play that game.</p>
+    </div>
+
+    <div style="margin-top:48px;">
+
+      <div class="privacy-grid reveal">
+        
+        <!-- No Data Selling -->
+        <div style="background:rgba(0,212,140,.05);border:1px solid rgba(0,212,140,.15);border-radius:var(--r);padding:26px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:1.8rem;flex-shrink:0;">🔒</div>
+          <div>
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.04em;margin-bottom:8px;color:var(--white);">Your Data Isn't the Product</h3>
+            <p style="font-size:.88rem;color:var(--grey);line-height:1.75;">Traditional ISPs like AT&T, Comcast, and Viasat make money two ways — your monthly bill AND selling your browsing data to advertisers. They track every site you visit, every search you make, and sell behavioral profiles to third parties. <strong style="color:var(--white)">Starlink's business model is simple: you pay for internet, you get internet.</strong> They're not building an advertising empire on top of your connection.</p>
+          </div>
+        </div>
+
+        <!-- No Throttling Based on Content -->
+        <div style="background:rgba(0,212,140,.05);border:1px solid rgba(0,212,140,.15);border-radius:var(--r);padding:26px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:1.8rem;flex-shrink:0;">🚫</div>
+          <div>
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.04em;margin-bottom:8px;color:var(--white);">No Throttling What You Watch</h3>
+            <p style="font-size:.88rem;color:var(--grey);line-height:1.75;">Cable and DSL providers have been caught throttling Netflix, YouTube, and competing streaming services to push customers toward their own content bundles. They slow your connection based on what you're watching and who you're watching it with. <strong style="color:var(--white)">Starlink doesn't have a cable TV package to protect.</strong> They have no incentive to throttle your streaming. What you watch is your business.</p>
+          </div>
+        </div>
+
+        <!-- No Bundling Traps -->
+        <div style="background:rgba(0,212,140,.05);border:1px solid rgba(0,212,140,.15);border-radius:var(--r);padding:26px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:1.8rem;flex-shrink:0;">📦</div>
+          <div>
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.04em;margin-bottom:8px;color:var(--white);">No Bundle Traps or Forced Extras</h3>
+            <p style="font-size:.88rem;color:var(--grey);line-height:1.75;">Traditional ISPs push you into bundles — internet + cable + phone — full of channels you don't want and services you never asked for, all to inflate your bill. Starlink is internet. Just internet. <strong style="color:var(--white)">You pick your plan, you pay one price, you get fast internet.</strong> No rental fees for equipment you didn't choose, no $15/month cable box charges, no surprise bills.</p>
+          </div>
+        </div>
+
+        <!-- You Own the Connection -->
+        <div style="background:rgba(0,212,140,.05);border:1px solid rgba(0,212,140,.15);border-radius:var(--r);padding:26px;display:flex;gap:16px;align-items:flex-start;">
+          <div style="font-size:1.8rem;flex-shrink:0;">🛰️</div>
+          <div>
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:.04em;margin-bottom:8px;color:var(--white);">You Own Your Hardware</h3>
+            <p style="font-size:.88rem;color:var(--grey);line-height:1.75;">With cable providers, you rent their modem and router — and they can push firmware updates, collect usage data from those devices, and change settings remotely at any time. <strong style="color:var(--white)">Your Starlink dish and router are yours.</strong> You bought them. They're on your property. You're not renting someone else's gear on your own land and paying them monthly for the privilege.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Freedom summary chips -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;justify-content:center;" class="reveal">
+      <div style="background:rgba(0,212,140,.08);border:1px solid rgba(0,212,140,.2);border-radius:8px;padding:11px 16px;font-size:13px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:7px;">🔒 No browsing data sold</div>
+      <div style="background:rgba(0,212,140,.08);border:1px solid rgba(0,212,140,.2);border-radius:8px;padding:11px 16px;font-size:13px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:7px;">🚫 No content throttling</div>
+      <div style="background:rgba(0,212,140,.08);border:1px solid rgba(0,212,140,.2);border-radius:8px;padding:11px 16px;font-size:13px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:7px;">📦 No bundle traps</div>
+      <div style="background:rgba(0,212,140,.08);border:1px solid rgba(0,212,140,.2);border-radius:8px;padding:11px 16px;font-size:13px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:7px;">🛰️ You own your hardware</div>
+      <div style="background:rgba(0,212,140,.08);border:1px solid rgba(0,212,140,.2);border-radius:8px;padding:11px 16px;font-size:13px;font-weight:700;color:var(--green);display:flex;align-items:center;gap:7px;">💰 One price, one bill</div>
+    </div>
+
+    <div style="background:rgba(0,120,255,.06);border:1px solid rgba(0,120,255,.15);border-radius:var(--r);padding:20px 24px;margin-top:24px;" class="reveal">
+      <p style="font-size:13px;color:var(--grey);line-height:1.75;font-weight:600;">
+        <strong style="color:var(--white)">The internet you actually own:</strong> Starlink is a direct connection between your dish and satellites orbiting 300 miles overhead. No local cable node, no ISP middleman sitting between you and the internet analyzing your traffic, no advertising algorithm watching what you click. Just a clear sky and fast internet. <strong style="color:var(--cyan)">The way it was always supposed to work.</strong>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHAT'S COMING -->
+<div class="z" style="background:linear-gradient(135deg,#020614,#030a1a,#020614);border-top:1px solid var(--border);">
+  <div class="section wrap">
+    <div class="text-center">
+      <div class="eyebrow" style="justify-content:center;">The Road Ahead</div>
+      <h2>Starlink Is Just <span class="c">Getting Started</span></h2>
+      <p class="section-lead mx-auto">While HughesNet and Viasat are standing still, Starlink is launching rockets every week. Here's what's already happening and what's coming fast.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:48px;" class="reveal">
+
+      <!-- 1 Gbps -->
+      <div style="background:var(--surface);border:1px solid var(--border-b);border-radius:var(--r);padding:28px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="flex-shrink:0;">
+          <div style="width:54px;height:54px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 0 24px rgba(0,120,255,.35);">⚡</div>
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:.04em;">1 Gbps Speeds — Coming in 2026</h3>
+            <span style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);border-radius:4px;padding:3px 10px;font-size:10px;font-weight:800;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;">Confirmed</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--grey);line-height:1.75;">Elon Musk confirmed gigabit Starlink speeds are coming in 2026. SpaceX already launched the <strong style="color:var(--white)">Performance Kit</strong> — their first 1 Gbps capable antenna ($1,999) — and it will be upgraded to full gigabit speeds with no hardware changes when the next-generation V3 satellites go live. That's satellite internet matching fiber-level speeds, delivered to your rural property. Fiber companies spent decades building cable networks to reach cities. Starlink is doing it from orbit.</p>
+        </div>
+      </div>
+
+      <!-- V3 Satellites -->
+      <div style="background:var(--surface);border:1px solid var(--border-b);border-radius:var(--r);padding:28px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="flex-shrink:0;">
+          <div style="width:54px;height:54px;background:linear-gradient(135deg,#4400aa,#8800ff);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 0 24px rgba(100,0,255,.3);">🛸</div>
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:.04em;">Gen 3 Satellites — 10x More Capacity</h3>
+            <span style="background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.3);border-radius:4px;padding:3px 10px;font-size:10px;font-weight:800;color:var(--orange);letter-spacing:.1em;text-transform:uppercase;">Launching 2026</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--grey);line-height:1.75;">SpaceX's V3 satellites — as large as a Boeing 737 with solar panels deployed — are targeting launch in 2026 via the Starship rocket. Each V3 satellite delivers <strong style="color:var(--white)">10x the downlink capacity and 24x the uplink capacity</strong> of today's satellites. A single Starship launch adds more capacity than 20 Falcon 9 missions combined. V3 satellites also orbit at lower altitudes, further reducing latency — targeting under 20ms, which is comparable to cable internet. This means your Starlink connection will keep getting faster and more reliable over time, automatically — no upgrade needed on your end.</p>
+        </div>
+      </div>
+
+      <!-- Direct to Cell -->
+      <div style="background:var(--surface);border:1px solid var(--border-b);border-radius:var(--r);padding:28px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="flex-shrink:0;">
+          <div style="width:54px;height:54px;background:linear-gradient(135deg,#005500,#00aa44);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 0 24px rgba(0,180,80,.3);">📱</div>
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
+            <h3 style="font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;letter-spacing:.04em;">Direct to Cell — Your Phone, No Tower Needed</h3>
+            <span style="background:rgba(0,212,140,.1);border:1px solid rgba(0,212,140,.3);border-radius:4px;padding:3px 10px;font-size:10px;font-weight:800;color:var(--green);letter-spacing:.1em;text-transform:uppercase;">Live Now</span>
+          </div>
+          <p style="font-size:.9rem;color:var(--grey);line-height:1.75;">Starlink Direct to Cell is already live. Your existing smartphone connects directly to Starlink satellites — <strong style="color:var(--white)">no dish, no special hardware, no cell tower required</strong>. As of early 2026, over 16 million users are on the service through carrier partners. This means that even in areas with zero cell signal — remote East Texas back roads, farms miles from the nearest tower — your phone can still reach emergency services, send texts, and stay connected. The next generation targets full 5G speeds from orbit. Dead zones are becoming a thing of the past.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="background:rgba(0,120,255,.06);border:1px solid rgba(0,120,255,.15);border-radius:var(--r);padding:20px 24px;margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;" class="reveal">
+      <div style="font-size:1.5rem;flex-shrink:0;">💡</div>
+      <p style="font-size:13px;color:var(--grey);line-height:1.7;font-weight:600;flex:1;min-width:200px;">
+        <strong style="color:var(--white)">The key point:</strong> When you sign up for Starlink today, you're not locked into today's technology. As SpaceX launches more satellites and upgrades the network, your speeds improve automatically. HughesNet and Viasat have barely changed in a decade. Starlink launched over 120 missions in 2025 alone and is accelerating.
+      </p>
+      <a href="https://starlink.com/residential?referral=RC-2034578-19016-61&app_source=share" class="btn btn-primary btn-md" target="_blank" rel="noopener" style="flex-shrink:0;">Get In Now →</a>
     </div>
   </div>
 </div>
@@ -760,11 +898,11 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:50px
         <span class="pc-price">Included in installation service</span>
       </div>
       <div class="product-card">
-        <span class="pc-icon">🔌</span>
-        <span class="pc-tag popular">Popular Add-On</span>
-        <h3>Whole-Home WiFi Mesh</h3>
-        <p>Large homes, shops, and barns often need more than one router. Dean sets up a full mesh WiFi network using Starlink's Router Mini and compatible mesh extenders — strong signal in every room and outbuilding.</p>
-        <span class="pc-price">Ask Dean about your property</span>
+        <span class="pc-icon">🚀</span>
+        <span class="pc-tag new">1 Gbps Ready</span>
+        <h3>Performance Kit — Future-Proof</h3>
+        <p>Starlink's flagship antenna built for gigabit speeds. Already capable of 1 Gbps downloads — waiting for V3 satellites to go live in 2026. IP69K weather rating (the highest available), works on AC or DC power including batteries and solar, and supports flexible mounting. <strong style="color:var(--white)">No hardware upgrade needed when gigabit speeds launch.</strong> Built to last.</p>
+        <span class="pc-price">$1,999 one-time · Gigabit-ready now</span>
       </div>
     </div>
   </div>
@@ -1000,6 +1138,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:50px
       <div class="why-card reveal"><span class="wc-icon">💼</span><h3>Remote Work</h3><p>Zoom, Teams, Google Meet — crystal clear. Stop driving to town for reliable internet. Work from your ranch, farm, or property full-time.</p></div>
       <div class="why-card reveal"><span class="wc-icon">🏡</span><h3>Any Property Type</h3><p>No ground infrastructure needed. Farm, ranch, mobile home, RV park, hunting camp, cabin — if you can see the sky, Starlink works.</p></div>
       <div class="why-card reveal"><span class="wc-icon">📵</span><h3>No Contract</h3><p>Month-to-month always. Pause with Standby Mode ($5/mo) or cancel anytime. No 24-month lock-in like HughesNet and Viasat.</p></div>
+      <div class="why-card reveal"><span class="wc-icon">🔒</span><h3>Your Data Stays Yours</h3><p>Traditional ISPs sell your browsing habits to advertisers. Starlink makes money from your subscription — not from building an ad profile on you. No tracking, no bundled cable packages, no data brokering.</p></div>
       <div class="why-card reveal"><span class="wc-icon">🗺️</span><h3>Take It Anywhere</h3><p>MAX plan includes a free Mini dish rental for travel. Roam plans let you take Starlink to job sites, hunting camps, RV trips — anywhere you go.</p></div>
       <div class="why-card reveal"><span class="wc-icon">⚡</span><h3>Works Through Power Outages</h3><p>Only needs power at your home and a clear sky. Run off a generator or battery backup and stay online while the rest of town goes dark. No local nodes to fail.</p></div>
       <div class="why-card reveal"><span class="wc-icon">🏟️</span><h3>No Peak-Time Slowdowns</h3><p>5G tanks when the game ends or everyone gets home at 5pm — you share a tower with the whole town. Starlink's satellites are yours alone. No congestion, ever.</p></div>
@@ -1159,7 +1298,11 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:50px
       <details class="reveal"><summary>Can I really game online with Starlink? <span class="sum-i">+</span></summary><p class="faq-ans">Yes. Starlink's 20–60ms latency supports Xbox, PS5, and PC gaming including competitive shooters and battle royales. HughesNet and Viasat have 600–800ms latency which is physically too slow for any real-time game. Starlink made rural gaming possible for the first time.</p></details>
       <details class="reveal"><summary>Does it work on my mobile home or RV? <span class="sum-i">+</span></summary><p class="faq-ans">Yes. Dean's Handyman Service specializes in Starlink installations on mobile homes, manufactured housing, and RV parks. We choose the right mount for your structure and handle the full install. For RV travel, the Roam plan + Starlink Mini lets you take internet wherever you go.</p></details>
       <details class="reveal"><summary>Does Starlink work if my town loses power? <span class="sum-i">+</span></summary><p class="faq-ans">Yes — as long as your home has power, Starlink works. It only needs electricity at your property and a clear view of the sky. Connect it to a generator, a battery backup, or solar power and you stay fully online while the rest of your town is dark. Traditional cable and fiber run through local nodes and exchange buildings that lose power too — so when the grid goes down, they go down with it. Starlink bypasses all of that.</p></details>
-      <details class="reveal"><summary>Does Starlink slow down during peak times like 5G does? <span class="sum-i">+</span></summary><p class="faq-ans">No. This is one of Starlink's biggest advantages over 5G home internet. 5G towers are shared with every smartphone and home in range — when a big game lets out, when people get home from work at 5pm, or during a local event, everyone hammers that tower at once and speeds crater. Starlink's satellites are dedicated overhead — your connection doesn't depend on what your neighbors are doing. The Residential MAX plan also gives you the highest network priority, so you always get the bandwidth you're paying for.</p></details><p class="faq-ans">Check your contract end date and plan ahead. Since Starlink has no contract, you can sign up and run both temporarily until your old contract expires, then cancel immediately. Many customers find Starlink so much better they cancel early and pay the termination fee — the difference in experience is that dramatic.</p></details>
+      <details class="reveal"><summary>Does Starlink slow down during peak times like 5G does? <span class="sum-i">+</span></summary><p class="faq-ans">No. This is one of Starlink's biggest advantages over 5G home internet. 5G towers are shared with every smartphone and home in range — when a big game lets out, when people get home from work at 5pm, or during a local event, everyone hammers that tower at once and speeds crater. Starlink's satellites are dedicated overhead — your connection doesn't depend on what your neighbors are doing. The Residential MAX plan also gives you the highest network priority, so you always get the bandwidth you're paying for.</p></details>
+      <details class="reveal"><summary>Does Starlink sell my data or track my browsing? <span class="sum-i">+</span></summary><p class="faq-ans">Starlink's business model is your monthly subscription — they're not building an advertising empire on top of your connection. Traditional ISPs like AT&T and Comcast have been caught selling customer browsing data to advertisers and throttling streaming services that compete with their own content bundles. Starlink has no cable TV package to protect and no ad network to feed. What you browse is your business. You also own your dish and router outright — they're on your property, not rented gear with remote access from a corporation.</p></details>
+      <details class="reveal"><summary>When is Starlink getting 1 Gbps speeds? <span class="sum-i">+</span></summary><p class="faq-ans">Starlink already launched the Performance Kit — their first 1 Gbps capable antenna. Full gigabit speeds unlock in 2026 when V3 satellites go live via Starship. Performance Kit buyers need zero hardware changes when it happens. V3 satellites deliver 10x the bandwidth of today's network. Fiber-level speeds, delivered from orbit to your rural property.</p></details>
+      <details class="reveal"><summary>What is Starlink Direct to Cell? <span class="sum-i">+</span></summary><p class="faq-ans">Direct to Cell lets your existing smartphone connect directly to Starlink satellites — no dish, no hardware, no cell tower needed. Already live in 2025 through carrier partners with over 16 million users. For rural East Texas this means coverage in true dead zones with zero cell signal. Emergency texts, calls, and data anywhere you can see sky. The next generation targets full 5G speeds from orbit.</p></details>
+      <details class="reveal"><summary>What if I'm still in a HughesNet or Viasat contract? <span class="sum-i">+</span></summary><p class="faq-ans">Check your contract end date and plan ahead. Since Starlink has no contract, you can sign up and run both temporarily until your old contract expires, then cancel immediately. Many customers find Starlink so much better they cancel early and pay the termination fee — the difference in experience is that dramatic.</p></details>
     </div>
   </div>
 </div>
@@ -1274,22 +1417,34 @@ if(form){form.addEventListener('submit',async function(e){e.preventDefault();var
     "- 2nd month FREE with referral code RC-2034578-19016-61\n"+
     "- Plans: Residential 100 ($50/mo select areas), Residential 200 ($80/mo select areas), Residential MAX ($120/mo — best value), Roam ($50/mo portable)\n"+
     "- Residential MAX includes: free Router Mini mesh WiFi, free Mini dish rental for travel, 50% off Roam plans\n"+
+    "- Performance Kit: $1,999 — already 1 Gbps capable, no hardware upgrade needed when V3 satellites launch\n"+
     "- Starlink Mini: $199 purchase or free rental with MAX\n"+
     "- Standby Mode: $5/mo to pause service\n"+
-    "- Speeds: up to 400+ Mbps MAX plan, 20-60ms latency\n"+
+    "- Speeds: up to 400+ Mbps today, 1 Gbps coming in 2026 with V3 satellites\n"+
     "- No contract, no data caps on residential\n"+
     "- Dean installs professionally within 200 miles of Pittsburg TX (East Texas, AR, LA, OK)\n"+
-    "RESILIENCE ADVANTAGES (important selling points):\n"+
+    "PRIVACY & FREEDOM (powerful selling point):\n"+
+    "- Starlink makes money from subscriptions, NOT selling your data — no ad profiles, no browsing tracking\n"+
+    "- Traditional ISPs (AT&T, Comcast, Viasat) sell customer browsing data to advertisers\n"+
+    "- No content throttling — cable ISPs throttle Netflix/YouTube to protect their own TV bundles. Starlink has no TV package to protect.\n"+
+    "- No bundle traps — just internet, one price, no forced cable packages or equipment rental fees\n"+
+    "- You OWN your dish and router — not rented corporate gear sitting on your property\n"+
+    "- Direct satellite-to-dish connection — no ISP middleman analyzing your traffic\n"+
+    "FUTURE TECHNOLOGY (use to get people excited):\n"+
+    "- 1 GBPS CONFIRMED 2026: Performance Kit already hardware-ready, V3 satellites launching via Starship, 10x more capacity than today\n"+
+    "- V3 SATELLITES: 10x downlink, 24x uplink vs today, lower orbit = under 20ms latency, each Starship launch adds capacity of 20 Falcon 9 missions\n"+
+    "- DIRECT TO CELL IS LIVE NOW: Your existing phone connects to Starlink satellites, no dish needed, 16 million+ users already, kills dead zones, next gen targets 5G speeds from space\n"+
+    "- Sign up today = speeds keep improving automatically as more satellites launch. HughesNet hasn't changed in a decade. Starlink launched 120 missions in 2025 alone.\n"+
+    "RESILIENCE ADVANTAGES:\n"+
     "- Only needs power at home + clear sky — works on generator/battery/solar through local grid outages\n"+
     "- Traditional cable/fiber/5G all depend on local ground infrastructure that fails when power goes out\n"+
-    "- 5G CONGESTION: 5G shares tower bandwidth with everyone nearby — slows badly at 5pm, after big games, during events. Starlink doesn't share — your signal comes from satellites overhead\n"+
-    "- Completely independent of local ISP infrastructure failures, backhoe cable cuts, storm damage to nodes\n"+
-    "VS FIBER: Fiber is faster but doesn't reach rural East Texas — no infrastructure, may never come\n"+
-    "VS 5G HOME: 5G is cheaper but needs tower proximity — most rural East TX properties are too far\n"+
-    "VS HUGHESNET/VIASAT: Starlink is 8x faster with 10-30x lower latency, no 24-month contract\n"+
+    "- 5G CONGESTION: 5G shares tower bandwidth with everyone nearby — slows badly at 5pm, after big games, during events. Starlink doesn't share.\n"+
+    "- Completely independent of local ISP infrastructure failures\n"+
+    "VS FIBER: Faster but doesn't reach rural East Texas — no infrastructure, may never come\n"+
+    "VS 5G HOME: Cheaper but needs tower proximity, congests at peak times, doesn't reach most rural TX\n"+
+    "VS HUGHESNET/VIASAT: 8x faster, 10-30x lower latency, no 24-month contract\n"+
     "WEBSITE: starlinknetworksolutions.com\n"+
-    "Keep answers to 3-4 sentences. Be honest — admit fiber/5G are technically better but emphasize they don't reach rural addresses.\n"+
-    "Always end with the referral link or suggest the free quote form. If they ask about installation, ask for their phone number or direct them to the Free Quote form.";
+    "Keep answers to 3-4 sentences. Be honest but enthusiastic. Always end with referral link or quote form.";
 
   var hist=[],open=false;
   var btn=document.getElementById('chat-btn'),box=document.getElementById('chat-box');
