@@ -1,0 +1,38 @@
+{
+  "business_info": {
+    "name": "Dean's Handyman Service LLC",
+    "phone": "281-917-9914",
+    "website": "https://deanshandymanservice.me",
+    "base_city": "Pittsburg, TX",
+    "offers": "No trip fees for local Pittsburg calls!"
+  },
+  "service_areas": [
+    "Pittsburg, TX",
+    "Mt. Pleasant, TX",
+    "Gilmer, TX",
+    "Longview, TX",
+    "Tyler, TX",
+    "Texarkana, TX",
+    "Shreveport, LA",
+    "Idabel, OK"
+  ],
+  "services": {
+    "handyman": [
+      "Deck repair",
+      "Fence repair",
+      "TV mounting",
+      "Trenching",
+      "Plumbing"
+    ],
+    "tech": [
+      "Starlink Professional Installation",
+      "Smart-home setup",
+      "Mesh Wi-Fi optimization"
+    ],
+    "electrical": [
+      "Outlet replacement",
+      "Light fixture install",
+      "Breaker troubleshooting"
+    ]
+  }
+}
