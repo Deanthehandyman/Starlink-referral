@@ -1,15 +1,13 @@
 // autopost-facebook-deans.js
-// Dean's Handyman Service LLC — Full Auto-Poster
-// ✅ Rotates 6 services × 18 locations × 7 angles
-// ✅ SEO + AEO + GEO keywords built in
+// Dean's Handyman Service LLC — Full Auto-Poster (Auto-ID Version)
 
 const BUSINESS = {
   name: "Dean's Handyman Service LLC",
   location: "Pittsburg, TX",
-  phone: "281-917-9914", 
+  phone: "281-917-9914",
   website: "https://deanshandymanservice.me",
   referral: "https://starlink.com/residential?referral=RC-2034578-19016-61&app_source=share",
-  tagline: "Local. Licensed. Done Right."
+  tagline: "Local. Clean. Honest. Done Right."
 };
 
 const SERVICES = [
@@ -22,19 +20,18 @@ const SERVICES = [
 ];
 
 const LOCATIONS = [
-  "Pittsburg, TX", "Mt Pleasant, TX", "Gilmer, TX", "Longview, TX", 
-  "Marshall, TX", "Texarkana, TX", "Tyler, TX", "Nacogdoches, TX", 
-  "Henderson, TX", "Carthage, TX", "Lufkin, TX", "Texarkana, AR", 
-  "Hope, AR", "Shreveport, LA", "Bossier City, LA", "Hugo, OK", 
+  "Pittsburg, TX", "Mt Pleasant, TX", "Gilmer, TX", "Longview, TX",
+  "Marshall, TX", "Texarkana, TX", "Tyler, TX", "Nacogdoches, TX",
+  "Henderson, TX", "Carthage, TX", "Lufkin, TX", "Texarkana, AR",
+  "Hope, AR", "Shreveport, LA", "Bossier City, LA", "Hugo, OK",
   "Idabel, OK", "Broken Bow, OK"
 ];
 
 const ANGLES = [
-  "Problem/Solution", "Local Shoutout", "Social Proof", 
+  "Problem/Solution", "Local Shoutout", "Social Proof",
   "Urgency/Availability", "Educational", "Seasonal", "Before/After"
 ];
 
-// Helper to grab random items from arrays
 const getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 async function generatePost() {
@@ -51,7 +48,7 @@ CRITICAL REQUIREMENTS:
 - Include the phone number: ${BUSINESS.phone}
 - Include the website: ${BUSINESS.website}
 - If the service involves Starlink, also include this free-month referral link: ${BUSINESS.referral}
-- Include 3-4 relevant local hashtags (e.g., #EastTexas, #DeansHandymanService, and the specific county/city).
+- Include 3-4 relevant local hashtags.
 - Do not use emojis excessively. Keep it professional but approachable.`;
 
   console.log(`Generating post for ${service} in ${location} using angle: ${angle}...`);
@@ -81,29 +78,56 @@ CRITICAL REQUIREMENTS:
   }
 }
 
+// NEW: Automatically figures out your Facebook Page ID using just your token!
+async function getFacebookCredentials(envToken) {
+  console.log("Attempting to auto-discover Facebook Page ID from Token...");
+  try {
+    let res = await fetch(`https://graph.facebook.com/v19.0/me/accounts?access_token=${envToken}`);
+    let data = await res.json();
+
+    if (data.data && data.data.length > 0) {
+      console.log(`✅ Discovered Page: ${data.data[0].name} (ID: ${data.data[0].id})`);
+      return { pageId: data.data[0].id, accessToken: data.data[0].access_token };
+    }
+
+    res = await fetch(`https://graph.facebook.com/v19.0/me?access_token=${envToken}`);
+    data = await res.json();
+
+    if (data.id && data.name) {
+      console.log(`✅ Discovered Page: ${data.name} (ID: ${data.id})`);
+      return { pageId: data.id, accessToken: envToken };
+    }
+  } catch (err) {
+    console.error("Error fetching page details:", err);
+  }
+  return null;
+}
+
 async function postToFacebook(content) {
-  if (!content) {
-    console.error("No content generated. Skipping Facebook post.");
+  if (!content) return;
+
+  const envToken = process.env.FACEBOOK_PAGE_TOKEN;
+  if (!envToken) {
+    console.error("Missing FACEBOOK_PAGE_TOKEN in environment variables.");
     return;
   }
 
-  const pageId = process.env.FACEBOOK_PAGE_ID;
-  const token = process.env.FACEBOOK_PAGE_TOKEN;
-
-  if (!pageId || !token) {
-    console.error("Missing Facebook credentials in environment variables.");
+  // Use the auto-discovery function instead of needing the ID secret
+  const credentials = await getFacebookCredentials(envToken);
+  
+  if (!credentials) {
+    console.error("❌ Could not resolve Page ID. The token might be expired.");
     return;
   }
 
   console.log("Posting to Facebook...");
-  
   try {
-    const res = await fetch(`https://graph.facebook.com/v19.0/${pageId}/feed`, {
+    const res = await fetch(`https://graph.facebook.com/v19.0/${credentials.pageId}/feed`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message: content,
-        access_token: token
+        access_token: credentials.accessToken
       })
     });
 
