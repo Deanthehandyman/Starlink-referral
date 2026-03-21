@@ -1,0 +1,80 @@
+# .github/workflows/autopost-deans.yml
+# ═══════════════════════════════════════════════════════
+# Dean's Handyman Service LLC — Facebook Auto-Poster
+# Posts at PEAK engagement times per day of week
+# Covers all services × all locations automatically
+# ═══════════════════════════════════════════════════════
+
+name: 🔧 Dean's Handyman — Auto-Poster
+
+on:
+  schedule:
+    # ─────────────────────────────────────────
+    # PEAK TIMES (research-backed for local
+    # service businesses + rural audiences)
+    # All times UTC — CST = UTC-6
+    # ─────────────────────────────────────────
+
+    # MONDAY — 9am CST (15:00 UTC)
+    # Good start to the week, people planning home projects
+    - cron: '0 15 * * 1'
+
+    # TUESDAY — 11am CST (17:00 UTC) ← BEST DAY
+    # Highest engagement day for local service businesses
+    - cron: '0 17 * * 2'
+
+    # WEDNESDAY — 10am CST (16:00 UTC) ← 2ND BEST
+    # Mid-week peak, people actively searching services
+    - cron: '0 16 * * 3'
+
+    # THURSDAY — 11am CST (17:00 UTC)
+    # People planning weekend projects and installs
+    - cron: '0 17 * * 4'
+
+    # FRIDAY — 9am CST (15:00 UTC)
+    # End of work week, people thinking about the weekend
+    - cron: '0 15 * * 5'
+
+    # SATURDAY — 8am CST (14:00 UTC)
+    # Rural audience checks phones early on weekends
+    # Highest Starlink/home service interest day
+    - cron: '0 14 * * 6'
+
+    # Sunday = OFF (rest day, lower engagement)
+
+  # Manual trigger — test any time from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: 'Test only — generates post but does NOT publish to Facebook'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  post-to-facebook:
+    name: 📘 Generate & Post
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 🔧 Run Dean's Auto-Poster
+        env:
+          GROQ_API_KEY:         ${{ secrets.GROQ_API_KEY }}
+          FACEBOOK_PAGE_ID:     ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_TOKEN:  ${{ secrets.FACEBOOK_PAGE_TOKEN }}
+          TEST_MODE:            ${{ github.event.inputs.test_mode || 'false' }}
+        run: node autopost-facebook-deans.js
+
+      - name: ✅ Done
+        run: echo "Post complete at $(date)"
